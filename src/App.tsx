@@ -186,25 +186,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="w-full py-12 md:py-[110px]">
-        <div className="max-w-[1200px] mx-auto flex flex-col gap-8 md:gap-[30px]">
-          <h2 className="font-semibold text-2xl md:text-[36px] text-[#303030] text-center">
-            You're in great company!
-          </h2>
-          
-          <div className="overflow-x-auto">
-            <div className="relative overflow-hidden">
-              <div className="flex gap-4 md:gap-6 pb-4 animate-[marquee_30s_linear_infinite]">
-                {[1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6].map((i, index) => (
-                  <TestimonialCard key={index} />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Pricing Section */}
       <section id="pricing" className="w-full px-4 md:px-8 py-12 md:py-[90px]">
         <div className="max-w-[1200px] mx-auto flex flex-col gap-8 md:gap-[30px] items-center">
@@ -251,17 +232,12 @@ export default function App() {
       <footer className="w-full border-t border-[#e3e3e3] bg-white">
         <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-8 md:py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Left: Twitter Icon */}
-            <div className="flex items-center gap-4">
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-black hover:text-[#cc6251] transition-colors">
-                <Twitter size={24} />
-              </a>
-            </div>
+      
 
             {/* Center: Copyright */}
             <div className="order-last md:order-none">
               <p className="text-[#0066ff] text-sm md:text-base">
-                © Brio Commerce Inc, All rights reserved
+                © OrderMerging.com, All rights reserved
               </p>
             </div>
 
