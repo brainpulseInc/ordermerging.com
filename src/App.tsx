@@ -13,9 +13,32 @@ import imgFeature3 from "figma:asset/1dfc955e98145cb0ab8be4a28d46e887565120bd.pn
 import imgFeature4 from "figma:asset/199f579c9f7ccfae3a9e0a4603b040e2a3bae9b8.png";
 import imgLogo from "figma:asset/15106adcb4efe1c32eadcae3b3e8b7588bac328d.png";
 import { Menu, X, Twitter } from 'lucide-react';
+import { useState, useEffect } from 'react';
+
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+useEffect(() => {
+  const contactUsLink = document.querySelector('.contact-us');
+  
+  if (contactUsLink) {
+    contactUsLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (typeof window.Intercom === 'function') {
+        window.Intercom('show'); // Opens Intercom Messenger
+      } else {
+        console.warn('Intercom not loaded yet');
+      }
+    });
+  }
+
+  // Cleanup: prevent multiple event bindings during hot reloads
+  return () => {
+    if (contactUsLink) {
+      contactUsLink.replaceWith(contactUsLink.cloneNode(true));
+    }
+  };
+}, []);
 
   return (
     <div className="bg-white flex flex-col items-center w-full min-h-screen">
@@ -246,9 +269,12 @@ export default function App() {
               <a href="#" className="text-black hover:text-[#cc6251] transition-colors text-sm md:text-base">
                 Terms
               </a>
-              <a href="#" className="text-black hover:text-[#cc6251] transition-colors text-sm md:text-base">
-                Contact Us
-              </a>
+            <a 
+  href="#" 
+  className="contact-us text-black hover:text-[#cc6251] transition-colors text-sm md:text-base">
+  Contact Us
+</a>
+
               <a href="#" className="text-black hover:text-[#cc6251] transition-colors text-sm md:text-base">
                 App Store
               </a>
