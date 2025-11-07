@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 
 export default defineConfig({
-  base: '/ordermerging/', // 👈 IMPORTANT: use your repo name here
+  base: '/ordermerging.com/', // 👈 IMPORTANT: use your repo name here
   plugins: [react()],
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
